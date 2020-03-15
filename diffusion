@@ -45,11 +45,12 @@ for i in range(N):
             atoms[j,1]=boundary-2
         elif y==0:
             atoms[j,1]=2
-        
-    line.set_xdata(atoms[:,0])
-    line.set_ydata(atoms[:,1])
-    draw()
-    savefig("final.png")
+ 
+
+line.set_xdata(atoms[:,0])
+line.set_ydata(atoms[:,1])
+draw()
+savefig("final.png")
    
             
 
