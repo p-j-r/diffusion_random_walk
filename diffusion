@@ -6,7 +6,6 @@ Created on Sat Mar 14 16:47:48 2020
 @author: paul
 """
 
-import sys
 from pylab import *
 from random import randint
 
@@ -32,18 +31,18 @@ savefig("initial.png")
 for i in range(N):
     for j in range(particles):    # go through all atoms
         # move (or not) in x or y direc
-        atoms[j,0]+=randint(-1,1)
+        atoms[j,0]+=randint(-1,1)       # change step size...
         atoms[j,1]+=randint(-1,1)
         
         #check for boundary collision     !make these according to var particles
         x,y=(atoms[j,0],atoms[j,1])
-        if x==boundary:
+        if x>=boundary:
             atoms[j,0]=boundary-2       #  !note this scale... 2 is just an arbitrary number to prevent spilling over
-        elif x==0:
+        elif x<=0:
             atoms[j,0]=2
-        if y==boundary:
+        if y>=boundary:
             atoms[j,1]=boundary-2
-        elif y==0:
+        elif y<=0:
             atoms[j,1]=2
  
 
